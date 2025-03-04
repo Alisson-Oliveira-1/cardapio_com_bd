@@ -1,3 +1,15 @@
+html, body {
+    height: 100%
+}
+
+.logo {
+    display: block;
+    width: 353px;
+    max-width: 353px; /* Limitar largura */
+    height: auto;
+    margin: 0 auto; /* Centralizar */
+}
+
 /* Resetar margens e centralizando a página */
 body {
     font-family: Arial, sans-serif;
@@ -7,39 +19,113 @@ body {
     padding: 0;
 }
 
-/* Criando um container para alinhar os botões */
+/* container para alinhamento */
 .button-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px, 7px;
+    justify-content: center;
+    height: 50vh;
+    margin-top: 0px;
 }
 
-/* Estilizando os botões */
+/* estyle botões */
 .button {
     display: flex;
     width: 293px;
+    max-width: 293px;
+    height: 80px;
     padding: 7px 20px;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin: 10px;
-    font-size: 18px;
+    margin: 10px auto; /* Centralizar os botões */
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     text-align: center;
+    font-family: "Jockey One", serif;
     text-decoration: none;
     color: #ffffff;
     background-color: #FF9F1C;                                               
-    border-radius: 8px;
+    border-radius: 20px;
     transition: background-color 0.3s ease;
+    box-sizing: border-box; /* Inclui o padding no tamanho do botão */
 }
 
-/* Efeito hover nos botões */
+/* Ícone */
+.button .icon {
+    width: 40px;
+    height: 40px;
+    transition: filter 0.3s ease;
+}
+
+/* efeito passar o mouse */
 .button:hover {
     background-color: #FFF39C;
     color: #000000;
 }
 
+/* Alterando cor do ícone no hover */
+.button:hover .icon {
+    filter: invert(0) brightness(0) sepia(1) saturate(5) hue-rotate(180deg); /* Para preto */
+}
+
+/* muda a cor no click */
 .button.clicked {
     background-color: #DB4E23 !important;
     color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+/* muda a cor no click */
+.button.clicked {
+    background-color: #DB4E23 !important;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+/* fundo da homepage */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, #FBD1A2 0%, #F79256 100%);
+    z-index: -1; /* Joga o fundo para trás */ 
+}
+
+.footer {
+    position: fixed; /* Fixa o rodapé na tela */
+    bottom: 0;       /* Coloca o rodapé no fundo */
+    left: 0;
+    width: 100%;     /* Faz o rodapé ocupar toda a largura da tela */
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 8px;
+    font-family: 'Arial', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .button-container {
+        position: relative;
+        top: 0;
+        height: auto;
+        margin-top: 10px; /* Mantém os botões logo abaixo da imagem */
+    }
+
+    .button {
+        width: 90%; /* Botões maiores para ocupar mais espaço */
+        font-size: 20px;
+    }
+
+    .logo {
+        width: 100%;
+        max-width: 400px; /* Ajusta o tamanho da imagem no celular */
+        margin-bottom: 5px; /* Reduz espaço abaixo da imagem */
+    }
 }

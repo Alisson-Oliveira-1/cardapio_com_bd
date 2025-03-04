@@ -5,19 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>homepage bruce bar</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jockey+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <header>
-        <img src="img/logo_v_1.png" alt="logo bruce bar" width="100%"/>
+        <img class="logo" src="img\logo_v_1.png" alt="logo bruce bar"/>
     </header>
 
+    <div class="background"></div>
+
     <div class="button-container">
-        <a href="https://maps.app.goo.gl/gbB3ryUQpTQGLSVj9" target="_blank">Endereço</a>
-        <a href="https://wa.me/557191686507?text=Olá,%20gostaria%20de%20agendar%20um%20horário!>" class="button">Faça sua reserva</a>
-        <a href="cardapio.html" class="button">Cardápio</a>
+        <a href="cardapio.html" target="_blank" class="button">
+            <img src="img\restaurant-svgrepo-com.svg" alt="Cardápio" class="icon">CARDÁPIO
+        </a>
+        <a href="https://maps.app.goo.gl/gbB3ryUQpTQGLSVj9" target="_blank" class="button">
+            <img src="img\location-pin-svgrepo-com.svg" alt="Endereço" class="icon">ENDEREÇO
+        </a>
+        <a href="https://wa.me/557191686507?text=Olá,%20gostaria%20de%20agendar%20um%20horário!" class="button">
+            <img src="img\note-svgrepo-com.svg" alt="Faça sua reserva" class="icon">FAÇA SUA RESERVA
+        </a>
     </div>
 
+    <footer class="footer">
+        <p>&copy; 2025 Alisson Oliveira - T-dev.  All rights reserved.</p>
+    </footer>       
+
+    <script>
+        document.querySelectorAll(".button").forEach(button => {
+            button.addEventListener("click", function () {
+                this.classList.toggle("clicked");
+            });
+        });
+    </script>
+     
 </body>
 </html>
